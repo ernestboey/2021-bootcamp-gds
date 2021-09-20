@@ -7,16 +7,29 @@ on:
       - practice
   workflow_dispatch:
 jobs:
-  # Linting
+  Lint-Application:
+    name: Lint Codebase with Super-Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
+      # https://github.com/marketplace/actions/super-linter
+      - name: Lint Codebase
+        uses: github/super-linter@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # https://github.com/marketplace/actions/upload-a-build-artifact
   # Security Scanning
   # https://github.com/marketplace/actions/container-image-scan
   # Caching
   # https://evilmartians.com/chronicles/build-images-on-github-actions-with-docker-layer-caching
   Build-And-Push-Application:
+    name: Build and Push Application Images
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       # https://github.com/marketplace/actions/checkout
       - name: Check out repository code
         uses: actions/checkout@v2
