@@ -32,12 +32,17 @@ jobs:
       # https://github.com/jonashackt/docker-hello-world/blob/main/.github/workflows/publish.yml
       - name: Build the frontend Docker image
         run: |
-          docker build ./frontend --tag ghcr.io/ernestboey/bootcamp-gds-frontend:latest
-          docker push ghcr.io/ernestboey/bootcamp-gds-frontend:latest
+          docker build ./frontend --tag ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:${{ github.sha }}
+          docker push ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:${{ github.sha }}
       - name: Build the backend Docker image
         run: |
-          docker build ./backend --tag ghcr.io/ernestboey/bootcamp-gds-backend:latest
-          docker push ghcr.io/ernestboey/bootcamp-gds-backend:latest
+          docker build ./backend --tag ghcr.io/${{ github.actor }}/bootcamp-gds-backend:${{ github.sha }}
+          docker push ghcr.io/${{ github.actor }}/bootcamp-gds-backend:${{ github.sha }}
+      - name: Copy the images with their tags to your docker-compose.yml
+        run: |
+          echo "ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:${{ github.sha }}"
+          echo "ghcr.io/${{ github.actor }}/bootcamp-gds-backend:${{ github.sha }}"
+
 # name: GitHub Actions Demo
 # on: [push]
 # jobs:
