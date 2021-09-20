@@ -30,7 +30,7 @@ jobs:
   #     # https://github.com/actions/setup-node
   #     - uses: actions/setup-node@v2
   #       with:
-  #         node-version: "16"
+  #         node-version: "14"
   #     - run: npm install ./frontend
   #     - run: npm test ./frontend
   Security-Scan:
@@ -47,25 +47,27 @@ jobs:
           docker build ./frontend --tag ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:test
           docker build ./frontend --tag ghcr.io/${{ github.actor }}/bootcamp-gds-backend:test
       # https://github.com/marketplace/actions/anchore-container-scan
-      - name: Scan Frontend Image
-        uses: anchore/scan-action@v3
-        with:
-          image: ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:test
-          severity-cutoff: critical
-      - name: Scan Backend Image
-        uses: anchore/scan-action@v3
-        with:
-          image: ghcr.io/${{ github.actor }}/bootcamp-gds-backend:test
-          severity-cutoff: critical
+      # - name: Scan Frontend Image
+      #   uses: anchore/scan-action@v3
+      #   with:
+      #     image: ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:test
+      #     severity-cutoff: critical
+      # - name: Scan Backend Image
+      #   uses: anchore/scan-action@v3
+      #   with:
+      #     image: ghcr.io/${{ github.actor }}/bootcamp-gds-backend:test
+      #     severity-cutoff: critical
       # https://github.com/marketplace/actions/container-image-scan
       - name: Scan Frontend Image
-        uses: azure/container-scan@v0
+        uses: azure/container-scan@v0.1
         with:
           image-name: ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:test
+          severity-threshold: CRITICAL
       - name: Scan Backend Image
-        uses: azure/container-scan@v0
+        uses: azure/container-scan@v0.1
         with:
           image-name: ghcr.io/${{ github.actor }}/bootcamp-gds-backend:test
+          severity-threshold: CRITICAL
 
   # Security Scanning
   # https://github.com/marketplace/actions/container-image-scan
