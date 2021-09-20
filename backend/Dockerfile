@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:14-alpine
 
 ARG user="node"
 ARG appdir="/home/node/app"
@@ -11,7 +11,6 @@ COPY --chown=${user} package.json package-lock.json ./
 RUN npm install
 
 COPY --chown=${user} . .
-
 
 RUN npm run build
 
