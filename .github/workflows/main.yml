@@ -37,6 +37,7 @@ jobs:
     name: Scan image for common vulnerabilities and ensures Dockerfile conformity with CIS Benchmarks
     runs-on: ubuntu-latest
     # needs: Unit-Tests
+    continue-on-error: true
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
