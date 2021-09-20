@@ -47,9 +47,11 @@ jobs:
           docker build ./frontend --tag ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:test
           docker build ./frontend --tag ghcr.io/${{ github.actor }}/bootcamp-gds-backend:test
       - name: Scan Frontend Image
+        uses: azure/container-scan@v0
         with:
           image-name: ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:test
       - name: Scan Backend Image
+        uses: azure/container-scan@v0
         with:
           image-name: ghcr.io/${{ github.actor }}/bootcamp-gds-backend:test
 
