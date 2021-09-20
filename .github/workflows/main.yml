@@ -31,8 +31,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - run: npm install
-      - run: npm test
+      - run: npm install ./frontend
+      - run: npm test ./frontend
   Security-Scan:
     name: Security
     runs-on: ubuntu-latest
