@@ -37,7 +37,6 @@ jobs:
     name: Scan image for common vulnerabilities and ensures Dockerfile conformity with CIS Benchmarks
     runs-on: ubuntu-latest
     # needs: Unit-Tests
-    continue-on-error: true
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -60,11 +59,13 @@ jobs:
       #     severity-cutoff: critical
       # https://github.com/marketplace/actions/container-image-scan
       - name: Scan Frontend Image
+        continue-on-error: true
         uses: azure/container-scan@v0.1
         with:
           image-name: ghcr.io/${{ github.actor }}/bootcamp-gds-frontend:test
           severity-threshold: CRITICAL
       - name: Scan Backend Image
+        continue-on-error: true
         uses: azure/container-scan@v0.1
         with:
           image-name: ghcr.io/${{ github.actor }}/bootcamp-gds-backend:test
