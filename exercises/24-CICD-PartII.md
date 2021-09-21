@@ -1,4 +1,4 @@
-# CI/CD - Part II
+# CI/CD Pipeline Enhancements
 
 ## Introduction
 
@@ -8,19 +8,40 @@ In this exercise, we will be extending the CI/CD pipeline you created in the [pr
 
 Leveraging on these tools allows Developers to detect and prevent defects in their codebase earlier in the Software Development Lifecycle (SDLC) more frequently. This is known as "Shift-Left Testing" in DevOps, and it fully embodies the "Test early and often" mantra typically seen in Agile organizations practicing iterative development.
 
+## Prerequisites
+
+You should have completed all previous exercises:
+
+1. [DevOps Setup](./20-DevOps.md)
+2. [Deploy Frontend to the Cloud](./21-CICD-PartI.md)
+3. [Docker Images](./22-Docker-Images.md)
+4. [Infrastructure-as-Code](./23-InfrastructureAsCode.md)
+
 ## Enhancing the CI/CD Pipeline
 
 ### Linting
 
-ASD
+Purpose of linting
+
+Task
+
+Hint, can consider using super-linter
 
 ### Image Scanning
+
+Purpose of image scanning
+
+Task
+
+Hint, can use Azure Container Scan which scans for vulnerable dependencies and checks for conformity to CIS Benchmarks, which is a ...
 
 ### TFSec
 
 ### Automated Dependency Updating
 
-Dependabot
+Purpose of Dependabot
+
+Task
 
 ### Further Stretch Goals
 
@@ -29,6 +50,7 @@ These won't have any solutions
 - Unit testing
 - Refactoring pipeline to use build-push-action
 - Caching
+- Further reduce the size of the images
 
 ---
 
