@@ -2,7 +2,7 @@ version: '3.0'
 
 services:
   frontend:
-    image: ghcr.io/ernestboey/bootcamp-gds-frontend@sha256:5bc20039f16d85b1b137429c7def454919d1a2ebf8f4093adb327a1215d901c8
+    image: ghcr.io/ernestboey/bootcamp-gds-frontend:08e8d03909a12801979f712f388184f1c28afd0c
     command: "npm start"
     environment:
       NODE_ENV: development
@@ -14,7 +14,7 @@ services:
       - 3000:3000
   
   backend:
-    image: ghcr.io/ernestboey/bootcamp-gds-backend@sha256:792912061e83ed88eaa25db7552e5bc8aecdbd4de5aab563e1b2639ddaa9f8fb
+    image: ghcr.io/ernestboey/bootcamp-gds-backend:08e8d03909a12801979f712f388184f1c28afd0c
     command: "npm start"
     environment:
       NODE_ENV: development
