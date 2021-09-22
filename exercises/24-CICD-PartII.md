@@ -4,7 +4,14 @@
 
 > This exercise is an **optional** stretch goal. If you are short on time, you may wish to work on this exercise after the workshop. Please proceed to the [next exercise](./25-CleanUp.md) to clean up your environment.
 
-In this exercise, we will be extending the CI/CD pipeline you created in the [previous exercise](./22-Docker-Image.md) ...
+In this exercise, we will be extending the CI/CD pipeline you created in the [previous exercise](./22-Docker-Image.md) to add several automated tools.
+
+These include:
+
+1. Code Linting
+2. Image Scanning
+3. IaC Scanning
+4. Automated Dependency Updating
 
 Leveraging on these tools allows Developers to detect and prevent defects in their codebase earlier in the Software Development Lifecycle (SDLC) more frequently. This is known as "Shift-Left Testing" in DevOps, and it fully embodies the "Test early and often" mantra typically seen in Agile organizations practicing iterative development.
 
@@ -21,36 +28,78 @@ You should have completed all previous exercises:
 
 ### Linting
 
-Purpose of linting
+Code linters are static code analysis tools commonly used to improve the quality of code.
 
-Task
+Linters help to flag out:
 
-Hint, can consider using super-linter
+- Formatting and styling inconsistencies
+- Non-adherence to coding standards and conventions
+- Common logical bugs / errors
+
+Typically, different programming languages will have their own specialized linters specific to the syntax of the language. Modern linters will also allow developers to add custom rules.
+
+#### Stretch Goal 1
+
+Add a new job in `.github/workflows/main.yml` to automatically lint the codebase.
+
+You can consider using the [Super-Linter GitHub Action](https://github.com/github/super-linter), which natively supports linting all languages in the codebase (ie. Javascript, Dockerfile, GitHub Actions).
+
+Upon successfully completing the exercise, the job will most likely fail as there are several linting errors in the codebase. You may consider following the recommendations to fix the errors.
+
+![Lint errors](./images/lint-errors.png)
 
 ### Image Scanning
 
+
+
 Purpose of image scanning
 
-Task
+#### Stretch Goal 2
 
-Hint, can use Azure Container Scan which scans for vulnerable dependencies and checks for conformity to CIS Benchmarks, which is a ...
+Add a new job in `.github/workflows/main.yml` to automatically scan the frontend and backend images for vulnerabilities.
 
-### TFSec
+Requirements:
+
+- Flag out vulnerabilities found in the images
+- Prevent the `Build-And-Push` from running if vulnerabilities are detected
+
+There are several open-source image scanning GitHub Actions available to accomplish this task. You may consider using the Container Scan GitHub Action which scans for vulnerable dependencies and checks for conformity to CIS Benchmarks.
+
+### Infrastructure-as-Code (IaC) Scanning
+
+TFSec (WIP)
+
+#### Stretch Goal 3
+
+Add TFSec job to `.github/workflows/deploy-to-aws.yml`
 
 ### Automated Dependency Updating
 
 Purpose of Dependabot
 
-Task
+https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates
+
+#### Stretch Goal 4
+
+Add automated dependency updating to your repository. You may consider using [dependabot](https://dependabot.com/).
+
+Requirements:
+
+1. Check for outdated GitHub Actions used in the CI/CD pipeline
+2. Check for outdated Node.js dependencies in the frontend and backend code
+3. Automated daily checks
 
 ### Further Stretch Goals
 
-These won't have any solutions
+In addition to the above stretch goals, you may consider working on these challenges in your own time for learning:
 
-- Unit testing
-- Refactoring pipeline to use build-push-action
-- Caching
-- Further reduce the size of the images
+- Add unit tests to the frontend and backend code and automate testing in the CI/CD pipeline
+- Further reduce the size of the frontend and backend images
+- Refactor the pipeline to use the [build-push-action GitHub Action](https://github.com/docker/build-push-action)
+- Implement caching
+  - https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md
+  - https://evilmartians.com/chronicles/build-images-on-github-actions-with-docker-layer-caching
+- Deploy other cloud services (databases, S3, etc.) via IaC
 
 ---
 
