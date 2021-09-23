@@ -52,4 +52,4 @@ In this section, you will set the secrets obtained from the previous section in 
 
 ## 
 
-[< Back to Exercises](../exercises/README.md) | [Next Exercise >](./22-IAC.md)
+[< Back to Exercises](../exercises/README.md) | [Next Exercise >](./32-Docker-Images.md)
