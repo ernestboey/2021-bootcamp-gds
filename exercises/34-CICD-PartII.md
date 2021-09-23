@@ -42,6 +42,11 @@ Typically, different programming languages will have their own specialized linte
 
 Add a new job in `.github/workflows/main.yml` to automatically lint the codebase.
 
+Requirements:
+
+1. Flag out code quality issues in the frontend and backend source code
+2. (Optional) Lint other files in the repository such as the yaml files used to define your CI/CD pipeline
+
 You can consider using the [Super-Linter GitHub Action](https://github.com/github/super-linter), which natively supports linting all languages in the codebase (ie. Javascript, Dockerfile, GitHub Actions).
 
 Upon successfully completing the exercise, the job will most likely fail as there are several linting errors in the codebase. You may consider following the recommendations to fix the errors.
@@ -50,7 +55,7 @@ Upon successfully completing the exercise, the job will most likely fail as ther
 
 ### Image Scanning
 
-
+TODO:
 
 Purpose of image scanning
 
@@ -67,13 +72,17 @@ There are several open-source image scanning GitHub Actions available to accompl
 
 ### Infrastructure-as-Code (IaC) Scanning
 
-TFSec (WIP)
+TODO:
+
+TFSec
 
 #### Stretch Goal 3
 
 Add TFSec job to `.github/workflows/deploy-to-aws.yml`
 
 ### Automated Dependency Updating
+
+TODO:
 
 Purpose of Dependabot
 
@@ -88,6 +97,7 @@ Requirements:
 1. Check for outdated GitHub Actions used in the CI/CD pipeline
 2. Check for outdated Node.js dependencies in the frontend and backend code
 3. Automated daily checks
+4. Automated suggested fixes via Pull Requests
 
 ### Further Stretch Goals
 
@@ -103,8 +113,8 @@ In addition to the above stretch goals, you may consider working on these challe
 
 ---
 
-Help is always just a click away (at the bottom of the page).
+Congratulations on completing the stretch goals! Do remember to move on to the final exercise to clean up your cloud environment.
 
 ---
 
-[< Back to Exercises](../exercises/README.md) | [Solution](../solutions/24-CICD-PartII.md) | [Next Exercise >](./25-CleanUp.md)
+[< Back to Exercises](../exercises/README.md) | [Solution](../solutions/34-CICD-PartII.md) | [Next Exercise >](./35-CleanUp.md)
