@@ -215,7 +215,7 @@ updates:
 ```
 
 When successfully created, pull requests should be automatically created. For example:  
-![Automated PRs with dependency updates](./images/dependabot.png)
+![Automated PRs with dependency updates](https://user-images.githubusercontent.com/11332803/134580206-81266c42-96e6-4462-96f0-598e94b1e5f3.png)
 
 ---
 

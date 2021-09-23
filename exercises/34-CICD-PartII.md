@@ -51,7 +51,7 @@ You can consider using the [Super-Linter GitHub Action](https://github.com/githu
 
 Upon successfully completing the exercise, the job will most likely fail as there are several linting errors in the codebase. You may consider following the recommendations to fix the errors.
 
-![Lint errors](./images/lint-errors.png)
+![Lint errors](https://user-images.githubusercontent.com/11332803/134580397-d7d0fb68-eedd-409e-a809-b78ce53473b3.png)
 
 ### Image Scanning
 
