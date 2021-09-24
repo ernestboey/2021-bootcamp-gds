@@ -1,4 +1,4 @@
-# CI/CD - Part I
+# Deploying the Frontend with IaC
 
 ## Introduction
 In this exercise, we will be setting up the Continuous Integration, Continuous Delivery (CI/CD) pipeline.
@@ -52,4 +52,4 @@ In this section, you will set the secrets obtained from the previous section in 
 
 ## 
 
-[< Back to Exercises](../exercises/README.md) | [Next Exercise >](./32-Docker-Images.md)
+[< Back to Exercises](../exercises/README.md) | [Next Exercise >](./33-Deploy-Backend-IaC.md)

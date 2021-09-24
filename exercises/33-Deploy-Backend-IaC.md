@@ -1,4 +1,4 @@
-# Infrastructure as Code
+# Deploying the Backend with IaC
 
 ## Introduction
 In the previous exercise, we set up our CI/CD pipeline with our AWS credentials. Upon invoking the pipeline, a bunch of resources were deployed onto AWS.
@@ -42,4 +42,4 @@ Request ID: 8bef2d59d5fee61f59684923d659f02e
 
 ---
 
-[< Back to Exercises](../exercises/README.md) | [Next Exercise >](./24-CICD-PartII.md)
+[< Back to Exercises](../exercises/README.md) | [Next Exercise >](./34-CICD-Enhancements.md)
