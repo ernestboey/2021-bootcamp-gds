@@ -1,6 +1,6 @@
 # Docker Images Solutions
 
-[< Back to Exercises](../exercises/README.md) | [Back to Docker Images Exercise](../exercises/32-Docker-Images.md)
+[< Back to Exercises](../exercises/README.md) | [Back to Docker Images Exercise](../exercises/31-Docker-Images.md)
 
 ## Optimizing Images
 
@@ -131,4 +131,4 @@ Run `docker-compose up --build` and ensure that both the frontend and backend ar
 
 ---
 
-[< Back to Exercises](../exercises/README.md) | [Back to Docker Images Exercise](../exercises/32-Docker-Images.md)
+[< Back to Exercises](../exercises/README.md) | [Back to Docker Images Exercise](../exercises/31-Docker-Images.md)
