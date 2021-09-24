@@ -55,9 +55,15 @@ Upon successfully completing the exercise, the job will most likely fail as ther
 
 ### Image Scanning
 
-TODO:
+In almost all projects small or large, you will likely depend on external libraries to develop your applications. You may take a look at the dependencies required by the frontend and backend in the respective `package.json` files.
 
-Purpose of image scanning
+Even the most widely used dependencies may contain vulnerabilities. Vulnerabilities in dependencies may expose your application to potential exploitation and affects its security posture. It is important to keep all dependencies up-to-date so that these security risks are mitigated.
+
+However, it is tedious to perform these checks manually, especially for larger projects that utilise many external libraries. It is also difficult to be thorough, since the libraries may also depend on other libraries that could contain vulnerabilities.
+
+This process of scanning your application for such vulnerabilities can be fully-automated with the help of a CI/CD pipeline and image scanning tools. When vulnerabilities are discovered and publicly disclosed, they are usually assigned a [Common Vulnerabilities and Exposures glossary (CVE)](https://cve.mitre.org/) entry with a unique ID. Whenever the pipeline runs, these automated tools reference known CVEs to detect vulnerable dependencies in your application and propose remediation measures.
+
+Some tools may also include additional compliance checks to ensure that applications adhere to industry-recognized benchmarks or best practices, such as the [CIS Docker Benchmarks](https://www.cisecurity.org/benchmark/docker/).
 
 #### Stretch Goal 2
 
@@ -68,27 +74,19 @@ Requirements:
 - Flag out vulnerabilities found in the images
 - Prevent the `Build-And-Push` from running if vulnerabilities are detected
 
-There are several open-source image scanning GitHub Actions available to accomplish this task. You may consider using the Container Scan GitHub Action which scans for vulnerable dependencies and checks for conformity to CIS Benchmarks.
-
-### Infrastructure-as-Code (IaC) Scanning
-
-TODO:
-
-TFSec
-
-#### Stretch Goal 3
-
-Add TFSec job to `.github/workflows/deploy-to-aws.yml`
+There are several open-source image scanning GitHub Actions available to accomplish this task. You may consider using the [Container Scan GitHub Action](https://github.com/Azure/container-scan) which scans for vulnerable dependencies and checks for adherence to CIS Benchmarks.
 
 ### Automated Dependency Updating
 
-TODO:
+In the previous task, image scanning tools were added to detect vulnerabilities in your codebase. However, this detection only happens when the pipeline is ran and should not be your only security mechanism relied upon. If no code changes are made for a long period of time, you will not be alerted of outdated / vulnerable dependencies automatically.
 
-Purpose of Dependabot
+To complement image scanning tools, dependency auto-updating tools can be used. They can be used to:
 
-https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates
+1. Automatically check codebase for vulnerable dependencies periodically.
+2. Automatically check the CI/CD pipeline for outdated dependencies periodically. The CI/CD pipeline also depends on open-source GitHub Actions, which receive updates frequently.
+3. Suggest appropriate remediation actions by upgrading outdated dependencies automatically (either as direct commits or Pull Requests).
 
-#### Stretch Goal 4
+#### Stretch Goal 3
 
 Add automated dependency updating to your repository. You may consider using [dependabot](https://dependabot.com/).
 
@@ -98,6 +96,16 @@ Requirements:
 2. Check for outdated Node.js dependencies in the frontend and backend code
 3. Automated daily checks
 4. Automated suggested fixes via Pull Requests
+
+### Infrastructure-as-Code (IaC) Scanning
+
+TODO:
+
+TFSec
+
+#### Stretch Goal 4
+
+Add TFSec job to `.github/workflows/deploy-to-aws.yml`
 
 ### Further Stretch Goals
 
@@ -109,7 +117,7 @@ In addition to the above stretch goals, you may consider working on these challe
 - Implement caching
   - https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md
   - https://evilmartians.com/chronicles/build-images-on-github-actions-with-docker-layer-caching
-- Deploy other cloud services (databases, S3, etc.) via IaC
+- Deploy other cloud services via IaC
 
 ---
 
