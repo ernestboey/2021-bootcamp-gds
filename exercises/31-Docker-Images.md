@@ -64,4 +64,4 @@ In the next exercise, we will begin deploying the frontend to AWS so that the ap
 
 ---
 
-[< Back to Exercises](../exercises/README.md) | [Solution](../solutions/31-Docker-Images.md) | [Next Exercise >](./33-Deploy-Frontend-IaC.md)
+[< Back to Exercises](../exercises/README.md) | [Solution](../solutions/31-Docker-Images.md) | [Next Exercise >](./32-Deploy-Frontend-IaC.md)
