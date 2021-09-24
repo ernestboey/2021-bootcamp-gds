@@ -14,6 +14,8 @@ In this exercise, we will be ...
 
 ### Understanding Docker
 
+TODO:
+
 anatomy of the docker-compose file
 
 anatomy of the Dockerfile
@@ -26,17 +28,27 @@ docker push
 
 ### Optimizing Images
 
+TODO:
+
+Lots of ways to write a Dockerfile. While the resulting container may be functional, it may not be the most optimized.
+
+Let's take a look at our current Dockerfiles in the frontend and backend.
+
 Advantages of optimizing images
 
 Replacing the base image for the frontend and backend image to reduce the size from 1gb to 300mb.
 
 ### Build and Push Images with GitHub Actions
 
+TODO:
+
 Why push images to an image registry?
 
 GitHub Actions to build and push images with Docker buildx
 
 ### Using Built Images
+
+TODO:
 
 The current docker-compose.yml file builds the image locally and runs it.
 
@@ -52,4 +64,4 @@ In the next exercise, we will begin deploying the frontend to AWS so that the ap
 
 ---
 
-[< Back to Exercises](../exercises/README.md) | [Solution](../solutions/32-Docker-Images.md) | [Next Exercise >](./33-InfrastructureAsCode.md)
+[< Back to Exercises](../exercises/README.md) | [Solution](../solutions/31-Docker-Images.md) | [Next Exercise >](./33-Deploy-Frontend-IaC.md)
