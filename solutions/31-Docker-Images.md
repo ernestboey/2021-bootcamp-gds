@@ -4,7 +4,7 @@
 
 ## Optimizing Images
 
-To reduce the image sizes, use the `alpine` based variant of the `node` image as the base image of the Dockerfile for the frontend and backend.
+To reduce the image sizes, use the `alpine` based variant of the `node` image as the parent image of the Dockerfile for the frontend and backend.
 
 Frontend:
 
@@ -49,6 +49,8 @@ RUN npm run build
 
 CMD [ "npm", "start" ]
 ```
+
+You may also check out [this article](https://derickbailey.com/2017/03/09/selecting-a-node-js-image-for-docker/) on which parent image to use for Node.js-based applications.
 
 ## Build and Push Images with GitHub Actions
 
