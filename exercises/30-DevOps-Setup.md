@@ -48,4 +48,4 @@ Approach a peer or a workshop instructor for help if you have trouble with this 
 
 ---
 
-[< Back to Exercises](./README.md) | | [Next Exercise (CICD - Part I) >](./31-CICD-PartI.md)
+[< Back to Exercises](./README.md) | | [Next Exercise >](./31-Docker-Images.md)
