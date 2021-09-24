@@ -2,9 +2,9 @@
 
 ## Introduction
 
-> This exercise is an **optional** stretch goal. If you are short on time, you may wish to work on this exercise after the workshop. Please proceed to the [next exercise](./25-CleanUp.md) to clean up your environment.
+> This exercise is an **optional** stretch goal. If you are short on time, you may wish to work on this exercise after the workshop. Please proceed to the [next exercise](./35-CleanUp.md) to clean up your environment.
 
-In this exercise, we will be extending the CI/CD pipeline you created in the [previous exercise](./22-Docker-Image.md) to add several automated tools.
+In this exercise, we will be extending the CI/CD pipeline you created in the [previous exercise](./31-Docker-Images.md) to add several automated tools.
 
 These include:
 
@@ -125,4 +125,4 @@ Congratulations on completing the stretch goals! Do remember to move on to the f
 
 ---
 
-[< Back to Exercises](../exercises/README.md) | [Solution](../solutions/34-CICD-PartII.md) | [Next Exercise >](./35-CleanUp.md)
+[< Back to Exercises](../exercises/README.md) | [Solution](../solutions/34-CICD-Enhancements.md) | [Next Exercise >](./35-CleanUp.md)
