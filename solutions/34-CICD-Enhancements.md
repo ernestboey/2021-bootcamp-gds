@@ -1,6 +1,6 @@
 # CI/CD Pipeline Enhancements Solutions
 
-[< Back to Exercises](../exercises/README.md) | [Back to CI/CD Pipeline Enhancements Exercise](../exercises/34-CICD-PartII.md)
+[< Back to Exercises](../exercises/README.md) | [Back to CI/CD Pipeline Enhancements Exercise](../exercises/34-CICD-Enhancements.md)
 
 ## Linting
 
@@ -219,4 +219,4 @@ When successfully created, pull requests should be automatically created. For ex
 
 ---
 
-[< Back to Exercises](../exercises/README.md) | [Back to CI/CD Pipeline Enhancements Exercise](../exercises/34-CICD-PartII.md)
+[< Back to Exercises](../exercises/README.md) | [Back to CI/CD Pipeline Enhancements Exercise](../exercises/34-CICD-Enhancements.md)
